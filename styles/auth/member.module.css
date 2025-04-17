@@ -1,0 +1,308 @@
+.container {
+    display: flex;
+    max-width: 1200px;  /* 限制最大寬度 */
+    min-height: 600px;  /* 設定最小高度 */
+    width: 100%;         /* 避免過度壓縮 */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 50px auto;  /* 置中 */
+  }
+
+/* ✅ 側邊欄 */
+.sidebar {
+    width: 220px;
+    background: #3F6D62;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px 0 0 10px;
+  }
+
+.menuItem {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.menuItem:hover, 
+.menuItem.active {
+    background-color: #5f8b7c;
+    color: #fff;
+}
+
+/* ✅ 內容區塊 */
+.content {
+    padding: 30px;
+    flex: 1;
+  
+}
+
+
+/* ✅ 頭像區塊 */
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    border: 4px solid transparent;  /* 先設置透明邊框 */
+    box-shadow: 0 0 0 1mm #3F6D62, /* 在頭像四周設置紅色陰影，5mm的距離 */
+    0 4px 6px rgba(0, 0, 2, 2); /* 渲染陰影效果來模擬斷層效果 */
+    
+    
+}
+
+
+
+.tabMenu {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.tabLeft {
+    display: flex;
+    gap: 15px;
+}
+
+.tabItem {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.tabItem:hover {
+    color: #146C94;
+}
+
+.tabItem.active {
+    border-bottom: 2px solid #146C94;
+    font-weight: bold;
+}
+
+/* ✅ 搜尋框 */
+.searchContainer input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ✅ 內容顯示區 */
+.tabContent {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 0;
+    max-width: 920px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 400px; 
+}
+
+.hidden {
+    display: none;
+}
+
+/* ✅ 更新喜愛運動樣式 */
+.sportTextContainer {
+    display: flex;
+    gap: 8px; /* 增加項目之間的間距 */
+    flex-wrap: wrap; /* 當項目過多時換行 */
+  }
+  
+  .sportText {
+    background-color: #ffcb7d; /* 設定背景顏色 */
+    color: white; /* 文字顏色 */
+    padding: 8px 16px;
+    border-radius: 15px; /* 圓角 */
+    font-size: 14px; /* 字體大小 */
+    font-weight: bold; /* 文字加粗 */
+    display: inline-block; /* 行內元素 */
+  }
+  
+  .sportText.other {
+    background-color: #64a8a3; /* 如果有其他運動，可以設不同顏色 */
+  }
+  
+  .userInfo h2 {
+    margin-bottom: 10px;
+    color: #25423b;
+    font-size: 22px;
+  }
+
+
+  .userInfo{
+    margin-left: 10px;
+  }
+
+
+  .menuItemBtn {
+    font-size: 18px;
+    padding: 12px 12px;
+    border-radius: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-align: left;
+    width: 100%;
+    transition: background 0.3s;
+  }
+  
+  .menuItemBtn:hover {
+    background-color: #4e7367;
+    color: #fff;
+    border-radius: 5px;
+
+  }
+
+  .activityCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activityImage {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    background-color: #eee;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .activityInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .activityActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  
+  
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .menuItem,
+    .menuItemBtn {
+      width: 45%;
+      margin: 0.25rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  
+    .content {
+      width: 100%;
+    }
+  
+    .profileHeader {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .avatar {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+    }
+  
+    .userInfo h2 {
+      font-size: 1.2rem;
+    }
+  
+    .tabMenu {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  
+    .tabItem {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+    }
+  
+    .tabContent {
+      padding: 0;
+    }
+    @media (max-width: 768px) {
+      .activityCard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .activityImage {
+        width: 80%;
+        height: auto;
+      }
+    
+      .activityInfo {
+        width: 100%;
+        align-items: center;
+      }
+    
+      .activityActions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    
+      .activityActions button {
+        font-size: 14px;
+        padding: 8px 12px;
+        width: auto;
+      }
+    }
+    
+  }
+  

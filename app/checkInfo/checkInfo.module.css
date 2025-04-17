@@ -1,0 +1,177 @@
+.title {
+  width: 100%;
+  padding: 15px 5px;
+  display: flex;
+  background-color: #29755D;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-sizing: border-box;
+ 
+}
+
+.titleName {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+
+
+/* 訂購資訊欄位 */
+.info {
+  width: 100%;
+  max-height: 1200px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #29755D;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+  padding: 30px 40px;
+}
+
+.secTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #29755D;
+  padding: 5px 20px;
+  border-bottom: 2px solid #528F7C;
+}
+
+
+.item {
+  transition: all 0.5s;
+  display: table-row;
+  box-sizing: border-box;
+  border-top: 1px solid #e4e4e4;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+ 
+  
+}
+
+.item:hover {
+    background-color: #f5f5f5;
+  }
+
+.item img {
+  width: 95px;
+  height: 95px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.item .name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  width: 30%;
+}
+
+.price,
+.subTotal {
+  font-size: 18px;
+  color: firebrick;
+  width: 15%;
+  text-align: center;
+}
+
+.item .price,
+.item .subTotal,
+.amount {
+  font-size: 18px;
+}
+
+.spec {
+  width: 20%;
+  color: #888;
+  font-size: 16px;
+  text-align: center;
+}
+
+.spec p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.count {
+  display: table-cell;
+  width: 20%;
+  font-size: 18px;
+}
+
+.quantityControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .info {
+    padding: 30px 20px;
+    min-height: 990px;
+  }
+
+  
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+ 
+  
+
+
+  .titleName {
+    font-size: 18px;
+  }
+
+  .item img {
+    width: 80px;  
+    height: 80px;
+  }
+
+  .secTitle,
+  .item .name {
+    font-size: 16px;
+  }
+
+  .spec,
+  .price {
+    font-size: 14px;
+  }
+
+  .spec p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+  }
+
+  .item .name {
+    width: 40%;
+  }
+
+  .price,
+  .spec,
+  .count {
+    width: 30%;
+  }
+
+  .price {
+    margin-left: 95px;
+  }
+
+  
+}

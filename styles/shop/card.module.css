@@ -1,0 +1,83 @@
+/* 卡片區 */
+
+.card {
+  width: 100%;
+  max-width:  unset;
+  min-height: 360px; /* ✅ 保證至少有高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0; 
+  transition: transform 0.2s ease-in-out;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.imgContainer {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  overflow: hidden;
+  /* line-height: 0px; */
+  aspect-ratio: 1 / 1;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transform-origin: center;
+  box-shadow: 0px 6px 7.5px 4px rgba(114, 124, 142, 0.3);
+}
+.cardDetails {
+  padding: 18px;
+  border-radius: 15px;
+  flex-grow: 1;
+}
+
+.productTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;           /* 限制最多兩行 */
+  -webkit-box-orient: vertical;    /* 垂直方向排列 */
+  overflow: hidden;                /* 隱藏超出範圍的文字 */
+  text-overflow: ellipsis;         /* 使用省略號表示被截斷的文字 */
+  min-height: 3em;                 /* 確保短標題看起來對齊 */
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 18px;
+  color: #528f7c;
+  display: inline-block;
+}
+
+.cardIcons {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.cardIcons .iconLikeStroke,
+.iconCart {
+  color: #528f7c;
+  font-size: 20px;
+  background: none;
+  margin: 3px;
+}
+

@@ -1,0 +1,156 @@
+.body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(255, 255, 255);
+  margin: 0px;
+}
+
+.container {
+  width: 70vw;
+  max-width: 1440px; /* 限制最大寬度 */
+  margin: auto;
+  padding: 50px 20px 60px 20px; /* 行動裝置也能吃 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Main{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+/* 麵包屑 */
+.breadcrumb {
+  margin: 10px 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #818785;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #528f7c;
+  font-weight: bold;
+}
+
+.separator {
+  margin: 0 5px;
+  color: #ccc;
+}
+
+.active {
+  font-weight: bold;
+  color: #000;
+}
+/* end麵包屑 */
+
+/* 左右側比例 */
+.sideBar{
+  flex: 0 0 20%;
+  max-width: 240px; 
+  padding-right: 20px;
+}
+
+.mainContent{
+  flex: 1; /* 自動吃剩下的空間 */
+}
+
+.itemSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* 排序選單 */
+.sortControls {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.sortControls select {
+  width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #29755D;
+}
+
+.sortControls option {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* 卡片容器 */
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+
+/* 包卡片的外框控制寬度 */
+.cardWrapper {
+  width: 100%;
+}
+
+/* 載入 */
+.loading {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+
+
+/* 平板 */
+@media screen and (max-width: 992px) {
+  .Main {
+    flex-direction: column;
+  }
+
+  .sideBar {
+    width: 100%;
+    max-width: none;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+
+  .cardContainer {
+    max-width: none; /* 讓卡片寬度跟著 container 走 */
+    width: 100%;
+    padding: 0 12px; /* ✅ 加上左右 padding，與 sideBar 對齊 */
+    box-sizing: border-box;
+  }
+}
+
+/* 手機 */
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100% !important;
+    padding: 10px 16px 40px 16px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .sideBar {
+    padding: 0 12px;
+  }
+  .cardContainer {
+    grid-template-columns: 1fr; /* 📱 手機：1 欄 */
+  }
+}

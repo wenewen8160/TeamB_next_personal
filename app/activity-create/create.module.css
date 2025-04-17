@@ -1,0 +1,509 @@
+.background{
+    background-color: #29755D;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.header{
+    display: none;
+}
+
+/* 標題 */
+.title{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: #fff;
+}
+
+/* 上一頁標籤 */
+.goBack{
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    background-color: #29755D;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    border: none;
+    width: 6.5rem;
+
+    &:hover{
+        font-weight: bold;
+        background: #A8D5C5;
+        color: #29755D;
+        border: none;
+    }
+}
+
+/* 開圖頁面, 讓球類圖片排版使用 */
+.sportIndex{
+    position: relative;
+    height: 100% !important;
+
+}
+
+/* 扣除球類圖片的介面 */
+.sport{
+    z-index: 5;
+    height: 100% !important;
+}
+
+
+
+.select{
+    /* width: 33%; */
+    padding: 0 !important; 
+    margin: 0;
+    cursor: pointer; 
+}
+
+
+.sportType{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px dashed #fff;
+    border-left: 1px dashed #fff;
+    opacity: 60%;
+
+    &:hover{
+    opacity: 100%;
+    }
+}
+
+.sportIcon{
+    font-size: 90px;
+    color: #fff;
+    
+}
+
+
+.sportType:hover .sportIcon,
+.sportType:hover .sportTitle {
+    transform: scale(1.5); /* 放大 1.5 倍 */
+    transition: transform 0.3s ease-in-out;
+    margin: 50px;
+}
+
+
+.sportTitle{
+    margin-top: 50px;
+    color: #fff;
+    /* text-decoration: none; */
+    
+    /* &:hover{
+        font-size: 64px;
+        } */
+    }
+    
+.selectActive{
+    opacity: 100%;
+}
+
+
+
+
+.basketballPhoto{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity/activity-basketballCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    right: 20%;
+    top: 7%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+
+}
+
+.basketballPhotoHover{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity-basketballCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    right: 20%;
+    top: 7%;
+    opacity: 60%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.volleyballPhoto{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity-volleyballCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+
+}
+
+.volleyballPhotoHover{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity-volleyballCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    opacity: 60%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.shuttlecockPhoto{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity-shuttlecockCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    left: -2%;
+    top: 3%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+
+}
+
+.shuttlecockPhotoHover{
+    width: 60vh;
+    height: 60vh;
+    background-image: url("/photo/activity-shuttlecockCourt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    left: -2%;
+    top: 3%;
+    opacity: 80%;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+
+/* Modal */
+
+.modalContent{
+    width: 700px !important;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modalWidth{
+    width: 100%;
+    background-color: #F4F4F4;
+    /* margin: auto; */
+}
+
+.inputTitle{
+    text-align: center !important;
+    font-size: 30px;
+    color: #29755D;
+    font-weight: bold;
+}
+
+.areaCourt{
+    margin: 0 !important;
+}
+
+/* 縣市區域用的線 */
+.line{
+    color: #a0c4b0;
+    font-weight: bold;
+
+}
+
+.distance{
+    margin-right: 15%;
+}
+
+.court{
+    display: flex;
+}
+
+.createInputDistance{
+    display: flex;
+}
+
+.modalIcon{
+    margin-right: 20px;
+}
+
+.createInput{
+    border: 3px solid #a0c4b0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 17px;
+    background-color: #fff;
+}
+
+.createTextarea{
+    border: none;
+    padding: 0;
+    /* border-radius: 10px; */
+    width: 100%;
+    height: 5.5rem;
+    /* margin-bottom: 17px; */
+    background-color: #fff;
+
+    &:focus{
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+
+.uploadImg{
+    margin: 0 10px;
+    padding: 0 !important;
+    border: 3px dashed #a0c4b0;
+    width: 25%;
+    height: 9rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #a0c4b0;
+    font-size: 24px;
+
+    &:hover{
+        border: solid;
+        font-size: 18px;
+    }
+}
+
+.imagePreview {
+    width: 90%;
+    height: 90%;
+    object-fit: cover; /*確保圖片填滿區塊且保持 1:1 */
+    border-radius: 10px;
+}
+
+.cancelBtn{
+    border-radius: 10px !important;
+}
+
+.okBtn{
+    background-color: #29755D !important;
+    color: #fff !important;
+    border: none !important; 
+    border-radius: 10px !important;
+}
+
+
+/* 會員登入 icons */
+
+/* 登入按鈕 */
+  .quickActionBtn {
+    display: inline-flex; /* 保持顯示 */
+  }
+
+  /* Navbar 右側按鈕 */
+.navbarActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+
+  /* 登入標籤 */
+  .user{
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    background-color: #29755D;
+    color: #fff;
+    border-radius: 5px;
+    /* display: flex; */
+    /* justify-content: end; */
+    z-index: 10;
+    border: none;
+    width: 5rem;
+
+    &:hover{
+        font-weight: bold;
+        background: #A8D5C5;
+        color: #29755D;
+        border: none;
+    }
+}
+
+    /* 會員頭像 */
+    .avatarImg {
+        position: absolute;
+        top: 5%;
+        right: 1%;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        display: block;
+        cursor: pointer;
+        z-index: 10;
+
+        &:hover{
+            box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.7);
+            transform: scale(1.03); /* 微微放大，可選 */
+        }
+    }
+
+    /* 點選後出現的頁簽 */
+    .dropdownMenu {
+        position: absolute;
+        top: 10%;
+        right: 1%;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 8px 0;
+        list-style: none;
+        min-width: 160px;
+        z-index: 999;
+        font-size: 15px;
+        font-weight: 0px;
+      }
+      
+      .dropdownMenu li {
+        padding: 10px 20px;
+        cursor: pointer;
+        white-space: nowrap;
+        color: #333;
+        transition: background-color 0.2s;
+      }
+      
+      .dropdownMenu li:hover {
+        background-color: #F4F4F4;
+        color: #1b5b47;
+      }
+
+
+@media screen and (max-width: 1100px){
+  .title{
+    font-size: 43px;
+  }
+  .modalContent{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 980px){
+    .title{
+      font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 820px){
+    .title{
+      font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .header{
+        display: block;
+    }
+    .title{
+        width: 100%;
+        font-size: 28px;
+        top: 25%;
+        text-align: center;
+    }
+
+    .goBack{
+        display: none;
+    }
+    .avatarWrapper{
+        display: none;
+    }
+
+    .sportType{
+        top: 20%;
+    }
+
+    .basketballPhoto{
+        display: none;
+    }
+    .basketballPhotoHover{
+        display: none;
+    }
+    .volleyballPhoto{
+        display: none;
+    }
+    .volleyballPhotoHover{
+        display: none;
+    }
+    .shuttlecockPhoto{
+        display: none;
+    }
+    .shuttlecockPhotoHover{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 718px){
+    .sportIndex{
+        top: 15%;
+    }
+
+    .title{
+      width: 100%;
+      font-size: 28px;
+      top: 0%;
+      text-align: center;
+    }
+
+    .select{
+        height: 20%;
+        padding: 0;
+        margin: 0;
+        /* border-top: 1px dashed #fff; */
+    }
+    .sportType{
+        /* display: block; */
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 481px){
+    
+}

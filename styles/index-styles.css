@@ -1,0 +1,1698 @@
+/* ************** header **************** */
+.navbar-hd {
+  width: 100%;
+  height: 130px;
+  padding: 50px;
+  background: #f4f4f4;
+  border-bottom: 3px solid #528f7c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  /* 確保它是固定在最上方 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Navbar 內容 */
+.navbar-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo-container {
+  width: 321px;
+  height: 116px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar 右側按鈕 */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 搜尋列 */
+.search-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  margin-right: -20px;
+  /* 確保與購物車、登入 icon 間距相等 */
+}
+
+.search-container.active {
+  width: 0;
+  height: 70px;
+  border-radius: 8px;
+  border: 3px solid #29755d;
+  background: white;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #8f8f8f;
+  display: none;
+  /* 預設隱藏 */
+}
+
+.search-container.active .search-input {
+  display: block;
+  /* 展開後顯示輸入框 */
+}
+
+/* 購物車、登入圖示 */
+.icon-Search,
+.icon-Cart,
+.icon-User {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #528f7c;
+  font-size: 24px;
+}
+
+/* 快速開團按鈕 */
+.quick-action-btn {
+  width: 269px;
+  padding: 13px 40px;
+  background: #bde6d9;
+  box-shadow: -2px -2px 10px rgba(41, 117, 93, 0.46) inset;
+  border-radius: 10px;
+  border: 3px solid rgba(41, 117, 93, 0.39);
+  font-size: 30px;
+  font-weight: 700;
+  color: #29755d;
+  text-align: center;
+  cursor: pointer;
+}
+
+.quick-action-btn:hover {
+  font-size: 32px;
+}
+
+/* 漢堡選單 */
+.menu-toggle {
+  width: 27px;
+  height: 15px;
+  background: #7aaa9b;
+  border: 1px solid #7aaa9b;
+  transform: rotate(-3deg);
+}
+
+/* ************** Header 內的按鈕 **************** */
+/* Header 內的按鈕 */
+.navbar-toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #528f7c;
+}
+
+/* Navbar 內的收起按鈕 */
+.navbar-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* 預設 navbar-bt 隱藏 */
+.navbar-bt {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: fixed;
+  top: 130px;
+  /* 確保在 header 下方 */
+  left: 0;
+  width: 100%;
+  background: #528f7c;
+  z-index: 999;
+}
+
+/* 當 .active 被添加時 */
+.navbar-bt.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* ************** nav-bar **************** */
+/* 導覽列容器 */
+.navbar-bt {
+  width: 100%;
+  background: #528f7c;
+  padding: 14px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 導覽區塊 */
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+/* 單個導覽區塊 */
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 標題 */
+.nav-title {
+  font-size: 36px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 7.6px;
+  color: white;
+  text-align: center;
+  border-bottom: 1px white solid;
+}
+
+/* 選單連結 */
+.nav-link {
+  font-size: 26px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.navbar-bt .nav-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* 滑鼠懸停效果 */
+.nav-link:hover {
+  color: #bde6d9;
+  border-bottom: 1px white solid;
+}
+
+/* ************** 主視覺區塊 **************** */
+/* 主視覺區塊 */
+.hero-container {
+  width: 100%;
+  height: auto;
+  background: #29755d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0;
+}
+
+/* 內部內容 */
+.hero-content {
+  width: 90vw;
+  aspect-ratio: 16/9;
+  height: 70vh;
+  display: flex;
+  position: relative;
+  border: 18px solid #dfdfdf;
+}
+
+/* 左側區域 */
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-logo {
+  font-size: 72px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  letter-spacing: 6px;
+}
+
+/* 右側內容區域 */
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 50px 0;
+}
+
+/* **中央分割線** */
+.hero-divider {
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  border-left: 18px solid #dfdfdf;
+}
+
+/* 主要標題區域 */
+.hero-text {
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 9px solid #dfdfdf;
+  padding: 40px 0;
+  letter-spacing: 3px;
+}
+
+.hero-title {
+  font-size: 60px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 40px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: white;
+}
+
+/* 副標題與行動 */
+.hero-action {
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 9px solid #dfdfdf;
+  padding: 40px 0;
+}
+
+.hero-highlight {
+  font-size: 38px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 7.6px;
+  color: white;
+}
+
+.hero-scroll {
+  font-size: 26px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 6.24px;
+  color: white;
+}
+
+/* 右側中線（連接邊框及正中央線） */
+.hero-right-divider {
+  width: 0px;
+  height: calc(100% + 36px);
+  position: absolute;
+  left: 75%;
+  transform: translateX(-50%);
+  border-left: 18px solid #dfdfdf;
+  top: -18px;
+}
+
+/* ************** 球類選單 **************** */
+/* 運動選擇區塊 */
+.sports-section {
+  width: 100vw;
+  height: auto;
+  /* 讓九宮格填滿整個畫面 */
+  background: #29755d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+/* Bootstrap 容器，確保滿版 */
+.sports-container {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 200px;
+  background: #29755d;
+}
+
+/* 九宮格 */
+.row {
+  display: flex;
+  width: 100%;
+  height: calc((100vh - 80px) / 3);
+}
+
+/* 確保所有 col-4 成為九宮格 */
+.col-4 {
+  border: 3px solid white;
+  /* 邊框 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 標題區 */
+.title-box {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* 標題字體 */
+.sports-title {
+  font-size: 32px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 12px;
+  color: white;
+}
+
+.title-box:hover .sports-title {
+  display: none;
+}
+
+/* .sports-subtitle {
+  font-size: 30px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: white;
+} */
+
+/* 球類選擇 */
+.grid-item {
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* 滑鼠懸停時背景變透明 */
+/* .grid-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+} */
+
+/* 滑鼠懸停時顯示 "前往報團" */
+.grid-item:hover .sports-text {
+  opacity: 1;
+}
+
+/* 滑鼠懸停時圖示放大 */
+.grid-item:hover .sports-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.sportSelect {
+  cursor: pointer; /* hover 進去會變手指 */
+}
+
+/* 讓未懸停的圖示變淡 */
+.sports-container:hover .grid-item:not(:hover) .sports-icon {
+  opacity: 0.5;
+}
+
+/* 球類圖標 */
+.sports-icon {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 排球圖示 */
+.icon-Volleyball {
+  font-size: 72px;
+  color: white;
+}
+
+/* 籃球圖示 */
+.icon-Basketball {
+  font-size: 72px;
+  color: white;
+}
+
+/* 羽球圖示 */
+.icon-Badminton {
+  font-size: 72px;
+  color: white;
+}
+
+/* 預設隱藏 "互動字" */
+.sport-text {
+  font-size: 30px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+}
+
+/* 預設隱藏 "前往報團" */
+.sports-text {
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 3px;
+}
+
+.hover-text .sport-text {
+  font-size: 20px;
+  opacity: 0;
+}
+
+.hover-text:hover .sport-text {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  /* 垂直置中 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+/* ************** 活動列表 **************** */
+/* 活動區塊 */
+.activity-container {
+  width: 100vw;
+  height: auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  background: #f4f4f4;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 200px;
+  /* margin: 0 auto; */
+}
+
+/* 標題 */
+.activity-title {
+  padding-top: 200px;
+  font-size: 60px;
+  font-weight: 700;
+  color: #528f7c;
+  letter-spacing: 12px;
+  text-align: center;
+}
+
+/* 內容框 */
+.activity-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 桌機二欄 */
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding: 20px;
+  /* border: 5px solid #528f7c; */
+  /* border-radius: 10px; */
+  box-sizing: border-box;
+}
+
+/* 活動項目 */
+.activity-item a {
+  font-size: 30px;
+  font-weight: 700;
+  color: #6c7275;
+  letter-spacing: 6px;
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+  text-decoration: none;
+}
+
+/* 預設高亮項目 */
+.activity-highlight {
+  color: #528f7c;
+}
+
+/* 底線效果 */
+.activity-highlight::after,
+.activity-item:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #528f7c;
+  margin-top: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* hover 時的變化 */
+.activity-item:hover {
+  color: #528f7c;
+}
+
+/* 查看更多活動 */
+.activity-footer {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.scroll-hint {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin: 8px 0 20px;
+  display: none;
+}
+
+.activity-scroll-vertical {
+  width: auto;
+  max-height: 70vh;
+  /* ✅ 區塊最大高度 */
+  overflow-y: auto;
+  /* ✅ 垂直出現滾動條 */
+  display: grid;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 8px;
+  margin-bottom: 20px;
+  margin: auto 150px;
+  grid-template-columns: repeat(2, 1fr);
+  /* ✅ 桌機一列兩張 */
+}
+
+/* 美化滾動條（可選） */
+.activity-scroll-vertical::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-scroll-vertical::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* ************** 購物商城 **************** */
+/* 商城區塊 */
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 0 100px;
+  background: #f4f4f4;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100vw;
+  padding: 200px 0;
+}
+
+/* 標題區 */
+.shop-header {
+  text-align: center;
+}
+
+.shop-title {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 12px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #528f7c;
+}
+
+
+/* 商品列表 */
+.shop-product-list {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap; 
+  /* max-width: 1200px;   */
+  margin: 0 auto; 
+}
+.shop-product-list::-webkit-scrollbar {
+  display: none;
+}
+.shop-product-list {
+  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none; /* Firefox */
+}
+/* 商品卡片 */
+.shop-product-card {
+  width: 400px;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 商品圖片 */
+.shop-product-image {
+  width: 100%;
+  height: 404px;
+  background: #d9d9d9;
+  border-radius: 5px;
+}
+
+.cardImg{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* 商品名稱 */
+.shop-product-name {
+  width: 100%;
+  padding: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 6px;
+  color: black;
+  background: white;
+}
+
+/* 商品卡片 hover 效果 */
+.shop-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 查看更多 */
+.shop-footer {
+  text-align: center;
+  margin-bottom: 70px;
+}
+/* 預設：桌機版顯示 footer、隱藏卡片 */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+/* ************** 查看更多xx **************** */
+/* 統一查看更多樣式 */
+.more-link {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #528f7c;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  /* 保持底線與箭頭的間距 */
+  animation: pulse 3s infinite;
+}
+
+/* 底線 */
+.more-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #528f7c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 箭頭 */
+.more-link::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid #528f7c;
+  border-bottom: 2px solid #528f7c;
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: -6px;
+  right: -18px;
+  /* 初始位置與底線右端對齊 */
+  opacity: 0;
+  transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  
+}
+
+/* Hover 效果 */
+.more-link:hover {
+  color: #2d5a4d;
+}
+
+/* Hover 時底線變長 */
+.more-link:hover::after {
+  width: 114%;
+}
+
+/* Hover 時箭頭滑出 */
+.more-link:hover::before {
+  opacity: 1;
+  right: -25px;
+  /* 箭頭順著底線移動 */
+}
+
+/* ************** 滾動slogan & 聯絡我們 **************** */
+
+.scroll-section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 滾動容器 */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* 滿版對齊 */
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 0;
+  scrollbar-width: none;
+}
+
+/* 隱藏滾動條 */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 單個滾動項目 */
+.scroll-item {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  /* 讓內容垂直排列 */
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+#item1::before,
+#item2::before,
+#item3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  /* 可自行調整透明度 */
+  z-index: 0;
+}
+
+/* 確保 h2 和 p 分行顯示 */
+.scroll-item h2,
+.scroll-item p {
+  display: block;
+  /* 確保它們是區塊元素 */
+  text-align: center;
+  /* 讓文字置中 */
+  width: 100%;
+  /* 確保佔滿整個父容器 */
+  margin-bottom: 15px;
+  /* 給 p 標籤增加間距 */
+  z-index: 1;
+  /* 確保文字在遮罩上層 */
+  position: relative;
+}
+
+/* 僅針對 item1~3 的標題與段落加陰影 */
+#item1 h2,
+#item2 h2,
+#item3 h2 {
+  font-size: 72px;
+  letter-spacing: 15px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#item1 p,
+#item2 p,
+#item3 p {
+  font-size: 24px;
+  letter-spacing: 8px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 設定每個圖片區塊的背景 */
+#item1 {
+  background-image: url("/photo/slogan_volleyball.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#item2 {
+  background-image: url("/photo/slogan_badminton.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#item3 {
+  background-image: url("/photo/slogan_basketball.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 聯絡我們 */
+
+#item4 {
+  background: #2d5a4d;
+  width: 100vw;
+  height: 100vh;
+  margin: 100px 0px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  /* 確保全屏寬度 */
+  height: 100vh;
+  /* 確保全屏高度 */
+  background: #2d5a4d;
+  /* margin: 100px 0px; */
+}
+
+/* 主要容器 */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* 小螢幕時換行 */
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  /* 限制最大寬度，避免過寬 */
+  max-width: 900px;
+  /* 防止太大 */
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 100px;
+  gap: 40px;
+}
+
+/* 左側標題區 */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 40%;
+  min-width: 200px;
+}
+
+/* TEAMB標題 */
+.contact-title {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 副標題 */
+.contact-subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  padding-left: 5px;
+  letter-spacing: 8px;
+}
+
+/* 右側表單 */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-width: 300px;
+}
+
+/* 表單標籤 */
+.contact-form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  /* 與 input 同寬對齊 */
+  margin: 0 auto 5px auto;
+}
+
+/* 修正輸入框 */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  /* 限制最大寬度，防止溢出 */
+  padding: 10px;
+  font-size: 18px;
+  color: #528f7c;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.contact-form button {
+  width: 100%;
+  /* 讓按鈕與輸入框保持一致 */
+  max-width: 400px;
+  /* 限制最大寬度，避免過大 */
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #29755d;
+  background: #bde6d9;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  /* 確保按鈕獨占一行 */
+  margin: 0 auto;
+  /* 水平置中 */
+}
+
+/* 按鈕 Hover 效果 */
+.contact-form button:hover {
+  background: #a8d5c5;
+  font-size: 22px;
+}
+
+/* RWD for scroll items */
+@media (max-width: 768px) {
+  /* 確保 h2 和 p 分行顯示 */
+  .scroll-item h2,
+  .scroll-item p {
+    display: block;
+    /* 確保它們是區塊元素 */
+    text-align: center;
+    /* 讓文字置中 */
+    width: 60%;
+    /* 確保佔滿整個父容器 */
+    z-index: 1;
+    /* 確保文字在遮罩上層 */
+    position: relative;
+  }
+
+  #item1 h2,
+  #item2 h2,
+  #item3 h2 {
+    font-size: 42px;
+    letter-spacing: 8px;
+    line-height: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+    text-align: start;
+  }
+
+  #item1 p,
+  #item2 p,
+  #item3 p {
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-align: start;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    padding-right: 30px;
+  }
+
+  /* 聯絡我們 */
+
+  #item4 {
+    background: #2d5a4d;
+    width: 100vw;
+    height: 100vh;
+    margin: 100px 0px;
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* 確保全屏寬度 */
+    height: 100vh;
+    /* 確保全屏高度 */
+    background: #2d5a4d;
+    /* margin: 100px 0px; */
+  }
+
+  /* 主要容器 */
+  .contact-container {
+    padding: 50px 80px;
+  }
+
+  /* 左側標題移置上方 */
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .contact-title {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  /* 副標題 */
+  .contact-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    padding-left: 5px;
+  }
+
+  /* 右側表單 */
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 300px;
+  }
+
+  /* 表單標籤 */
+  .contact-form label {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  /* 修正輸入框 */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    max-width: 400px;
+    /* 限制最大寬度，防止溢出 */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 15px;
+    margin: 0 auto 25px auto;
+  }
+
+  .contact-form button {
+    max-width: 400px;
+    /* 限制最大寬度，避免過大 */
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin: 50px auto 0px auto;
+    /* 水平置中 */
+  }
+
+  /* 按鈕 Hover 效果 */
+  .contact-form button:hover {
+    font-size: 20px;
+  }
+}
+
+/* ************** footer **************** */
+/* 頁腳容器 */
+.footer-container {
+  align-self: stretch;
+  height: 600px;
+  padding: 100px 50px 50px 50px;
+  background: #528f7c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+/* 中間分隔線 */
+.footer-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 122px;
+}
+
+.line {
+  flex: 1;
+  height: 0;
+  border: 8px rgba(255, 255, 255, 0.5) solid;
+}
+
+.footer-logo {
+  width: 196px;
+  height: 45px;
+  background: #bde6d9;
+  box-shadow: -2px -2px 10px rgba(41, 117, 93, 0.46) inset;
+  border: 2px solid #528f7c;
+}
+
+/* 主要連結區 */
+.footer-links {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.footer-section {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-title {
+  font-size: 36px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 7.6px;
+  color: white;
+  text-align: center;
+  border-bottom: 1px white solid;
+}
+
+.footer-link {
+  font-size: 26px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.footer-link:hover {
+  color: #bde6d9;
+}
+
+/* 版權資訊 & 社群連結 */
+.footer-bottom {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 25px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon-Fb,
+.icon-Ig,
+.icon-Mail {
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    width: 100vw;
+    height:100vh;
+    background: #29755d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 100px 0;
+    margin-top: 50px;
+  }
+  
+  /* 內部內容 */
+  /* 改成上下排列 */
+  
+  .hero-content {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 10px solid #dfdfdf;
+  }
+  
+  .hero-divider {
+    display: none;
+  }
+
+  .hero-left,
+.hero-right {
+  width: 100%;
+  padding-top: 30px;
+}
+  .hero-logo {
+    font-size: 72px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    letter-spacing: 5px;
+  }
+  
+
+  
+  /* 主要標題區域 */
+  .hero-text {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 9px solid #dfdfdf;
+    padding: 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: white;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: white;
+  }
+  
+  /* 副標題與行動 */
+  .hero-action {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 0px solid #dfdfdf;
+    padding: 40px 0;
+  }
+  
+  .hero-highlight {
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: white;
+  }
+  
+  .hero-scroll {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 3px;
+    color: white;
+  }
+  
+  /* 右側中線（連接邊框及正中央線） */
+  .hero-right-divider {
+    width: 0px;
+    height: calc(100% + 36px);
+    position: absolute;
+    left: 75%;
+    transform: translateX(-50%);
+    border-left: 3px solid #dfdfdf;
+    top: -18px;
+  }
+
+
+
+  /********   球類選項   *******/
+  .sports-section {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #29755d;
+    box-sizing: border-box;
+    padding-top: 100px;
+  }
+
+  .sports-container {
+    width: 100%;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  /* 九宮格 */
+  .row {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 九官格白線 */
+  .col-4 {
+    border: 2.5px solid white;
+    /* 邊框 */
+    height: 200px;
+  }
+
+  /* 標題字體 */
+  .title-box {
+    display: flex;
+    /* flex-direction: column-reverse; */
+    align-items: center;
+  }
+
+  .sports-title {
+    margin: 5px 0;
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: white;
+  }
+
+  .sports-text {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .sport-text {
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .sports-icon {
+    width: 52px;
+    height: 52px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* 排球圖示 */
+  .icon-Volleyball {
+    font-size: 42px;
+    color: white;
+  }
+
+  /* 籃球圖示 */
+  .icon-Basketball {
+    font-size: 42px;
+    color: white;
+  }
+
+  /* 羽球圖示 */
+  .icon-Badminton {
+    font-size: 42px;
+    color: white;
+  }
+
+  /********   活動列表   ********/
+
+  /* 查看更多 */
+  .activity-footer {
+    grid-column: auto;
+    /* ✅ 移除跨兩欄，回歸單欄 */
+    justify-content: center;
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .activity-footer .more-link {
+    font-size: 18px;
+    animation: pulse 3s infinite;
+  }
+
+  .activity-scroll-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+    overflow-y: auto;
+    gap: 12px;
+    max-height: 70vh;
+    padding: 20px auto;
+    width: 300px;
+  }
+
+  .activity-box > .card {
+    flex: 0 0 auto;
+    width: 85%;
+    scroll-snap-align: start;
+  }
+
+  .activity-container {
+    gap: 40px;
+    padding: 30px 0;
+  }
+
+  .activity-title {
+    font-size: 42px;
+    font-weight: 600;
+  }
+
+  .activity-box {
+    height: 60vh;
+  }
+
+  /* ************** 購物商城 **************** */
+  .shop-container {
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  .shop-title {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 8px;
+  }
+
+  .shop-product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shop-product-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  .shop-product-card {
+    flex: 0 0 auto;
+    width: 280px;
+    height: auto;
+    aspect-ratio: 1/1;
+    /* display: flex; */
+    scroll-snap-align: start;
+  }
+
+  
+  /* 商品圖片 */
+  .shop-product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /* flex: 1; */
+  }
+
+  /* 商品名稱 */
+  .shop-product-name {
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: flex;
+    
+  }
+  .shop-more-card {
+    flex: 0 0 auto;
+    width: 280px;
+    aspect-ratio: 1 / 1;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    animation: pulse 3s infinite;
+  }
+  
+  .more-card-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+  }
+  
+  .more-card-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #29755d;
+  }
+}
+
+/* 動畫區 */
+@keyframes shake-icon {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(8deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-8deg);
+  }
+
+  75% {
+    transform: scale(1.1) rotate(8deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+
+.shake {
+  animation: shake-icon 0.6s ease-in-out;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+

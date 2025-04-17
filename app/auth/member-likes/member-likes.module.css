@@ -1,0 +1,224 @@
+/* member主要樣式 */
+.container {
+  display: flex;
+  max-width: 1200px; /* 限制最大寬度 */
+  min-height: 600px; /* 設定最小高度 */
+  width: 100%; /* 避免過度壓縮 */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 50px auto; /* 置中 */
+}
+
+/* 側邊欄 */
+.sidebar {
+  width: 220px;
+  background: #3f6d62;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+/* 內容區塊 */
+.content {
+  padding: 30px;
+  flex: 1;
+}
+
+/* 搜尋框 */
+/* .searchContainer input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} */
+
+/* 內容顯示區 */
+.tabContent {
+  margin-top: 20px;
+}
+
+
+/* 右側內容樣式 */
+.list * {
+  box-sizing: border-box;
+}
+
+/* 排序選單 */
+.sortControls {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.sortControls select {
+  width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #29755D;
+}
+
+.sortControls option {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* tab */
+.tabContainer {
+  width: 70vw;
+  max-width: 920px;
+  margin: 0px auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  border-bottom: 3px solid #ddd;
+}
+
+/* 當Tab被選中時的樣式 */
+.activeTab {
+  font-weight: bold;
+  border-bottom: 3px solid #29755d !important; /* 底部邊框顯示綠色 */
+  color: #29755d; /* Tab文字顯示為綠色 */
+}
+
+/* .input {
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  border: none;
+  background: none;
+  font-size: 18px;
+} */
+
+/* 標題：收藏的商品 */
+.orderName {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.noLikes {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* 卡片清單 */
+.list {
+  width: 100%;
+  padding: 12px 0;
+  max-width: 920px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;      /* 允許上下捲動 */
+  overflow-x: hidden;    /* 禁止左右捲動 */
+  max-height: 400px;     /* 設一個高度才能產生滾動條 */
+}
+
+/* 單張卡片 */
+.listCard {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: #d9d9d9;
+  }
+}
+
+.productImageContainer {
+  width: 25%;
+  height: 25%;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.productInfo {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.productColor {
+  margin-top: 4px;
+  color: #333;
+}
+
+.productPrice {
+  margin-top: 10px;
+  color: #528f7c;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 側邊欄 */
+
+.menuItem {
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.menuItem:hover,
+.menuItem.active {
+  background-color: #5f8b7c;
+  color: #fff;
+}
+
+.menuItemBtn {
+  font-size: 18px;
+  padding: 12px 12px;
+  border-radius: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  text-align: left;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.menuItemBtn:hover {
+  background-color: #4e7367;
+  color: #fff;
+  border-radius: 5px;
+}

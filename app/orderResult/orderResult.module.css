@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container svg {
+    width: 60px;
+    height: 60px;
+}
+ 
+.container img {
+    width: 150px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 20px;
+    padding: 0 10px;
+}
+

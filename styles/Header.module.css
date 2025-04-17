@@ -1,0 +1,341 @@
+/* 滑鼠捲動效果 */
+/* 捲動後 header 降低透明度 */
+.scrolled {
+  height: 150px;
+  padding: 20px;
+  background: rgba(244, 244, 244, 0.85);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+}
+/* 隱藏 header（向下滑時） */
+.hideHeader {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* logo 縮小（可自訂） */
+/* .logoSmall {
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+.scrolled .navbarContent {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  transform-origin: top center;
+} */
+/* ************** header **************** */
+.navbarHd {
+  width: 100%;
+  height: 130px;
+  padding: 0px 50px;
+  background: #F4F4F4;
+  border-bottom: 3px solid #528F7C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Navbar 內容 */
+.navbarContent {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* Logo */
+.logoContainer {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoContainer img {
+  max-height: 44px;
+  width: auto;
+}
+
+/* Navbar 右側按鈕 */
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 🔹 搜尋欄 (預設隱藏，避免 display: none) */
+.searchContainer {
+  opacity: 0;
+  display: none;
+  width: auto;
+  height: 40px;
+  border-radius: 8px;
+  background: white;
+  border: 2px solid #29755D;
+  padding: 5px 10px;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* 🔹 當 active 類別存在時，顯示搜尋框 */
+.searchContainer.active {
+  opacity: 1;
+  display: flex;
+  transform: scale(1);
+}
+
+/* 搜尋輸入框 */
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 搜尋按鈕 */
+.searchToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: #528F7C;
+  transition: background 0.3s;
+}
+
+.searchToggle:hover {
+  background: rgba(82, 143, 124, 0.2);
+}
+
+/* 購物車、登入圖示 */
+.iconSearch,
+.iconCart,
+.iconUser {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #528F7C;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.iconSearch:hover,
+.iconCart:hover,
+.iconUser:hover {
+  background: rgba(82, 143, 124, 0.2);
+}
+
+/* 購物車數量呈現 */
+.iconCartArea {
+  position: relative;
+}
+
+.iconCartNum{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #29755D;
+  justify-content: center;
+  align-items: center;
+  color:#FFF;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px; /* 微調，讓數字更接近右上角 */
+  right: -5px; /* 微調，讓數字更接近右上角 */
+  font-size: 12px; /* 設定字體大小 */
+}
+
+/* 搜尋開啟時，只顯示快速開團按鈕 */
+.searching .iconCart,
+.searching .iconUser {
+  display: none !important;
+}
+
+.searching .searchContainer {
+  display: flex !important;
+}
+
+.searching .quickActionBtn {
+  display: inline-flex; /* 保持顯示 */
+}
+
+
+/* 快速開團按鈕 */
+.quickActionBtn {
+  padding: 10px 20px;
+  background: #29755D;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 20px;
+  height: 44px;
+}
+
+.quickActionBtn:hover {
+  background: #A8D5C5;
+  font-size: 18px;
+  color: #29755D;
+  border: none;
+}
+
+/* ************** Header 內的按鈕 **************** */
+/* Header 內的按鈕 */
+.navbarToggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #528F7C;
+}
+
+.toggleBtn span {
+  transition: transform 0.3s ease;
+}
+
+
+
+
+/* 手機版 RWD：小於 768px */
+@media screen and (max-width: 768px) {
+
+  .navbarHd{
+    padding: 25px 50px 10px 50px;
+  }
+  .navbarContent {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logoContainer {
+    margin-bottom: 1.1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: auto;
+  }
+  .logoContainer img {
+    max-width: 180px;
+    min-width: 150px;
+    height: auto;
+  }
+
+  .actionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbarActions,
+  .navbarToggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .navbarToggle {
+    position: static; /* ✅ 移除 position absolute */
+    transform: none;  /* ✅ 移除 transform */
+    top: auto;
+    right: auto;
+  }
+
+  .toggleBtn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+
+  .quickActionBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    line-height:28px;
+  }
+
+  .searchContainer {
+    width: 50%;
+    margin-top: 0.5rem;
+  }
+  .searchInput{
+    width: 50%;
+  }
+}
+
+
+.disabled {
+  pointer-events: none; /* 禁止點擊 */
+
+}
+
+
+.avatarImg {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block;
+  cursor: pointer
+}
+.dropdownMenu {
+  position: absolute;
+  right: 310px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 8px 8px;
+  list-style: none;
+  min-width: 160px;
+  z-index: 999;
+  font-size: 15px;
+  width: 200px;
+  font-weight: 0px;
+}
+
+.dropdownMenu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdownMenu li:hover {
+  background-color: #F4F4F4;
+  color: #1b5b47;
+}

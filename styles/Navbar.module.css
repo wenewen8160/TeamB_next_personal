@@ -1,0 +1,192 @@
+/* 初始：隱藏在上方 */
+/* 初始：收合，隱藏在上方 */
+.navbarBt {
+  position: fixed;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  background: #528F7C;
+  z-index: 900;
+  padding: 14px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 130px; */
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none; /* 🔒 防止點擊 */
+  transition: all 0.4s ease;
+}
+
+/* 開啟：滑下顯示 */
+.navbarBt.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* 🔓 開放點擊 */
+}
+
+/* 隱藏：只是額外樣式備用（可不必用） */
+.navbarBt.none {
+  visibility: hidden;
+}
+
+/* .closeBtn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+} */
+
+/* ************** nav-bar **************** */
+/* 導覽列容器 */
+.navbarBt {
+  width: 100%;
+  background: #528F7C;
+  padding: 14px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 導覽區塊 */
+.navContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+/* 單個導覽區塊 */
+.navSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 標題 */
+.navTitle {
+  font-size: 26px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 7.6px;
+  color: white;
+  text-align: center;
+  border-bottom: 1px white solid;
+}
+
+/* 選單連結 */
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.navLink{
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+}
+.navbarBt .navLink {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* 滑鼠懸停效果 */
+.navLink:hover {
+  color: #BDE6D9;
+  border-bottom: 1px white solid;
+}
+
+
+/* 手機版 RWD */
+@media screen and (max-width: 768px) {
+  .navbarBt {
+    top: 130px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navSection {
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navTitle {
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+  }
+
+  .navLink {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  /* .closeBtn {
+    font-size: 26px;
+    top: 10px;
+    right: 15px;
+    z-index: 1001;
+  } */
+}
+/* 手風琴效果（手機版展開 navLink） */
+@media screen and (max-width: 768px) {
+  .linkGroup {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+  }
+
+  .show {
+    max-height: 500px; /* 根據內容多少可自行加大 */
+  }
+
+  .navTitle {
+    cursor: pointer;
+    /* padding: 5px 0; */
+    border-bottom: none;
+    width: 100%;
+    text-align: center;
+  }
+  .navTitle:hover {
+    font-size: 28px;         /* ✅ 比原本略大（原本是 26px） */
+    transition: font-size 0.2s ease;
+  }
+  
+  .navSection{
+    border-bottom:1px solid white;
+  }
+  .navSection:hover {
+    padding-bottom: 0.5rem;
+   scale: 1;
+
+  }
+  /* .navSection:active{
+    padding-bottom: 0.5rem;
+  } */
+  
+}

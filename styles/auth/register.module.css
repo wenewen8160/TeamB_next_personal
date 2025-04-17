@@ -1,0 +1,209 @@
+/* 整體容器，使用 flex 讓內容居中 */
+.container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 90%; /* 讓容器寬度占滿整個螢幕 */
+    height: 600px; /* 高度占滿整個視窗 */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-left: 70px;
+    transform: translateY(-80px); /* 向上移動 */
+  }
+  
+  /* 左側區塊 (綠色背景) */
+  .leftSection{
+    width: 50%;
+    height: 400vh;
+    background: #0F3D3E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    text-align: left;
+  }
+  
+  .leftSection p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+  
+  .leftSection h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .separator{
+    width: 50px;
+    height: 4px;
+    background: #1DB954;
+    margin: 15px 0;
+  }
+  
+  /* ✅ 右側區塊 */
+  .rightSection {
+    width: 50%;
+    padding: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .rightSection h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #0F3D3E;
+  }
+  
+  /* ✅ 輸入框樣式 */
+  .inputBox {
+    margin-bottom: 30px;
+  }
+  
+  .inputBox label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .input:focus {
+    border-color: #0F3D3E;
+  }
+  
+  /* ✅ 註冊按鈕 */
+  .submitSection {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .registerBtn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #0F3D3E;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .registerBtn:hover {
+    background: #146C94;
+  }
+  
+  /* ✅ 連結區域 */
+  .links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #0F3D3E;
+    font-weight: bold;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .passwordContainer {
+    position: relative;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* RWD: 針對小螢幕的設計 */
+  @media (max-width: 768px) {
+    .container {
+      height: auto;
+      margin-left: 0;
+      transform: translateY(0);
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .leftSection {
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      text-align: center;
+    }
+  
+    .rightSection {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .input {
+      width: 100%; /* 欄位寬度調整為 100% */
+      margin-bottom: 20px;
+    }
+  
+    .submitSection {
+      text-align: center; /* 讓送出按鈕置中 */
+    }
+  
+    .registerBtn {
+      width: 100%; /* 送出按鈕占滿整行 */
+      font-size: 16px;
+      padding: 14px;
+    }
+  }
+  
+  /* 更小螢幕 (手機) */
+  @media (max-width: 480px) {
+    .leftSection {
+      padding: 20px;
+    }
+  
+    .input {
+      width: 100%; /* 欄位寬度調整為 100% */
+    }
+  
+    .registerBtn {
+      font-size: 16px;
+      padding: 14px;
+    }
+  }
+  

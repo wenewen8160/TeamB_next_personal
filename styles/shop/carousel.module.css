@@ -1,0 +1,103 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ 固定 4 欄 */
+  gap: 24px;
+  width: 100%;
+  max-width: 1280px; /* ✅ 對齊上面的灰色區塊寬度 */
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+/* 左右箭頭 */
+.iconButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.765); /* ✅ 半透明 */
+  backdrop-filter: blur(4px); /* ✅ 模糊背景 */
+  transition: transform 0.2s ease;
+}
+
+.iconButton:hover {
+  background-color: #e1e4e8;
+  border-radius: 50%;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.iconInner {
+  font-size: 24px;
+  color: #528f7c;
+  line-height: 1;
+}
+
+.leftArrow {
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rightArrow {
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.iconLeft {
+  position: relative;
+left: -1px;
+}
+
+.iconRight {
+  position: relative;
+  right: -2px;
+}
+
+
+/* RWD 手機板 */
+
+@media (max-width: 768px) {
+  .iconButton {
+    display: none;
+  }
+
+
+  /* 手機卡片橫向滾動 */
+  .cardWrapper {
+    display: flex;
+    /* flex-wrap: nowrap; */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-left: 16px; /* ✅ 只保留左側 padding，避免第一張卡片被切到 */
+    padding-right: 8px; /* ✅ 微調右側 */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+.scrollItem {
+  width: 240px;
+  flex: 0 0 auto;  
+  scroll-snap-align: start;
+}
+}
+
